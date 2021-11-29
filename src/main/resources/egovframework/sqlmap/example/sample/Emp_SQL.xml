@@ -16,5 +16,12 @@
 				  , #deptno# )
 		]]>
 	</insert>
+	
+	<select id="empDao.selectEmpList" resultClass="egovMap">
+		SELECT
+			empno, ename , deptno
+		FROM
+			emp
+	</select>
 
 </sqlMap>

@@ -1,5 +1,7 @@
 package egovframework.emp_project.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -16,6 +18,11 @@ public class EmpServiceImpl implements EmpService {
 	@Override
 	public String insertEmp(EmpVO vo) throws Exception {
 		return empDAO.insertEmp(vo);
+	}
+
+	@Override
+	public List<?> selectEmpList() throws Exception {
+		return empDAO.selectEmpList();
 	}
 
 }

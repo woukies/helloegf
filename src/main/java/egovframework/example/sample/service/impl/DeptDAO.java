@@ -1,5 +1,7 @@
 package egovframework.example.sample.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import egovframework.example.sample.service.DeptVO;
@@ -9,5 +11,9 @@ import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 public class DeptDAO extends EgovAbstractDAO {
 	public String insertDept(DeptVO vo) throws Exception {
 		return (String) insert("deptDao.insertDept", vo);
+	}
+
+	public List<?> selectDeptList() throws Exception {
+		return list("deptDao.selectDeptList");
 	}
 }

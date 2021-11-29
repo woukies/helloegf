@@ -1,5 +1,7 @@
 package egovframework.example.sample.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -16,6 +18,11 @@ public class DeptServiceImpl implements DeptService {
 	@Override
 	public String insertDept(DeptVO vo) throws Exception {
 		return deptDAO.insertDept(vo);
+	}
+
+	@Override
+	public List<?> selectDeptList() throws Exception {
+		return deptDAO.selectDeptList();
 	}
 
 }

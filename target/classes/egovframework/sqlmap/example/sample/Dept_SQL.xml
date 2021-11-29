@@ -16,5 +16,12 @@
 				  , #loc# )
 		]]>
 	</insert>
+	
+	<select id="deptDao.selectDeptList" resultClass="egovMap">
+		SELECT
+			deptno, dname , loc
+		FROM
+			dept	
+	</select>
 
 </sqlMap>
