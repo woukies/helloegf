@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ga</groupId>
-	<artifactId>dept_project</artifactId>
+	<artifactId>helloEGF</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>dept_project</name>
+	<name>helloEGF</name>
 	<url>http://www.egovframe.go.kr</url>
 
 	<licenses>
