@@ -25,4 +25,9 @@ public class DeptServiceImpl implements DeptService {
 		return deptDAO.selectDeptList();
 	}
 
+	@Override
+	public DeptVO selectDeptDetail(int deptno) throws Exception {
+		return deptDAO.selectDeptDetail(deptno);
+	}
+
 }

@@ -33,4 +33,12 @@ public class EmpController {
 		empService.insertEmp(vo);
 		return "";
 	}
+	
+	@RequestMapping(value = "/empDetail.do")
+	public String selectEmpDetail(int empno, ModelMap model) throws Exception {
+		EmpVO vo = empService.selectEmpDetail(empno);
+		model.addAttribute("empVO", vo);
+
+		return "emp/empDetail";
+	}
 }

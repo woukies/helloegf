@@ -5,4 +5,5 @@ import java.util.List;
 public interface EmpService {
 	String insertEmp(EmpVO vo) throws Exception;
 	List<?> selectEmpList() throws Exception;
+	EmpVO selectEmpDetail(int empno) throws Exception;
 }

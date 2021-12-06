@@ -19,9 +19,20 @@
 	
 	<select id="deptDao.selectDeptList" resultClass="egovMap">
 		SELECT
-			deptno, dname , loc
+			deptno, dname, loc
 		FROM
 			dept	
+	</select>
+	
+	<select id="deptDao.selectDeptDetail" resultClass="deptVO">
+		<![CDATA[
+			SELECT
+				deptno, dname, loc
+			FROM
+				dept
+			WHERE
+				deptno = #deptno#
+		]]>	
 	</select>
 
 </sqlMap>

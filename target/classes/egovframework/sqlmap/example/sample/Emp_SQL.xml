@@ -19,9 +19,18 @@
 	
 	<select id="empDao.selectEmpList" resultClass="egovMap">
 		SELECT
-			empno, ename , deptno
+			*
 		FROM
 			emp
 	</select>
+	
+	<select id="empDao.selectEmpDetail" resultClass="empVO">
+		SELECT
+			empno, ename, job, mgr, hiredate, sal, nvl(comm, 0) "comm", deptno
+		FROM
+			emp
+		WHERE
+			empno = #empno#
+	</select>
 
-</sqlMap>
+</sqlMap>  

@@ -34,4 +34,12 @@ public class DeptController {
 		deptService.insertDept(vo);
 		return "";
 	}
+	
+	@RequestMapping(value = "/deptDetail.do")
+	public String selectDeptDetail(int deptno, ModelMap model) throws Exception {
+		DeptVO vo = deptService.selectDeptDetail(deptno);
+		model.addAttribute("deptVO", vo);
+
+		return "dept/deptDetail";
+	}
 }

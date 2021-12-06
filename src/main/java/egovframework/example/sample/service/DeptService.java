@@ -17,4 +17,6 @@ public interface DeptService {
 	 * @exception Exception
 	 */
 	List<?> selectDeptList() throws Exception;
+	
+	DeptVO selectDeptDetail(int deptno) throws Exception;
 }

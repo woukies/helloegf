@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 <style>
 	table {
-		width: 800px;
+		width: 400px;
 		border-collapse: collapse;
 	}
 	
@@ -24,30 +24,24 @@
 </head>
 <body>
 	<table>
-		<caption>사원목록</caption>
 		<tr>
-			<th>사원번호</th>
-			<th>사원이름</th>
-			<th>직업</th>
-			<th>매니저</th>
-			<th>입사일자</th>
-			<th>급여</th>
-			<th>커미션</th>
 			<th>부서번호</th>
+			<td>${ deptVO.deptno }</td>
 		</tr>
-		<!-- resultList: 참조값 -->
-		<c:forEach items="${ resultList }" var="result">
-			<tr>
-				<td>${ result.empno }</td>
-				<td><a href="empDetail.do?empno=${ result.empno }">${ result.ename }</a></td>
-				<td>${ result.job }</td>
-				<td>${ result.mgr }</td>
-				<td>${ result.hiredate }</td>
-				<td>${ result.sal }</td>
-				<td>${ result.comm }</td>
-				<td>${ result.deptno }</td>
-			</tr>
-		</c:forEach>
+		<tr>
+			<th>부서이름</th>
+			<td>${ deptVO.dname }</td>
+		</tr>
+		<tr>
+			<th>부서위치</th>
+			<td>${ deptVO.loc }</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button type="button">수정</button>
+				<button type="button">삭제</button>
+			</td>
+		</tr>
 	</table>
 </body>
 </html>

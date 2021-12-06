@@ -25,4 +25,9 @@ public class EmpServiceImpl implements EmpService {
 		return empDAO.selectEmpList();
 	}
 
+	@Override
+	public EmpVO selectEmpDetail(int empno) throws Exception {
+		return empDAO.selectEmpDetail(empno);
+	}
+
 }
