@@ -19,4 +19,8 @@ public interface DeptService {
 	List<?> selectDeptList() throws Exception;
 	
 	DeptVO selectDeptDetail(int deptno) throws Exception;
+	
+	void deleteDept(int deptno) throws Exception;
+	
+	void updateDept(DeptVO vo) throws Exception;
 }

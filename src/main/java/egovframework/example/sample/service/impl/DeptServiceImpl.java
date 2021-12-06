@@ -30,4 +30,14 @@ public class DeptServiceImpl implements DeptService {
 		return deptDAO.selectDeptDetail(deptno);
 	}
 
+	@Override
+	public void deleteDept(int deptno) throws Exception {
+		deptDAO.deleteDept(deptno);
+	}
+
+	@Override
+	public void updateDept(DeptVO vo) throws Exception {
+		deptDAO.updateDept(vo);
+	}
+
 }

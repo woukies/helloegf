@@ -3,60 +3,20 @@ package egovframework.emp_project.service;
 import java.sql.Timestamp;
 
 public class EmpVO {
-	private int empno;
+	private String empno;
 	private String ename;
 	private String job;
-	private int mgr;
+	private String mgr;
 	private Timestamp hiredate;
-	private double sal;
-	private double comm;
-	private int deptno;
+	private String sal;
+	private String comm;
+	private String deptno;
 
-	public double getSal() {
-		return sal;
-	}
-
-	public void setSal(double sal) {
-		this.sal = sal;
-	}
-
-	public double getComm() {
-		return comm;
-	}
-
-	public void setComm(double comm) {
-		this.comm = comm;
-	}
-
-	public String getJob() {
-		return job;
-	}
-
-	public void setJob(String job) {
-		this.job = job;
-	}
-
-	public int getMgr() {
-		return mgr;
-	}
-
-	public void setMgr(int mgr) {
-		this.mgr = mgr;
-	}
-
-	public Timestamp getHiredate() {
-		return hiredate;
-	}
-
-	public void setHiredate(Timestamp hiredate) {
-		this.hiredate = hiredate;
-	}
-
-	public int getEmpno() {
+	public String getEmpno() {
 		return empno;
 	}
 
-	public void setEmpno(int empno) {
+	public void setEmpno(String empno) {
 		this.empno = empno;
 	}
 
@@ -68,11 +28,51 @@ public class EmpVO {
 		this.ename = ename;
 	}
 
-	public int getDeptno() {
+	public String getJob() {
+		return job;
+	}
+
+	public void setJob(String job) {
+		this.job = job;
+	}
+
+	public String getMgr() {
+		return mgr;
+	}
+
+	public void setMgr(String mgr) {
+		this.mgr = mgr;
+	}
+
+	public Timestamp getHiredate() {
+		return hiredate;
+	}
+
+	public void setHiredate(Timestamp hiredate) {
+		this.hiredate = hiredate;
+	}
+
+	public String getSal() {
+		return sal;
+	}
+
+	public void setSal(String sal) {
+		this.sal = sal;
+	}
+
+	public String getComm() {
+		return comm;
+	}
+
+	public void setComm(String comm) {
+		this.comm = comm;
+	}
+
+	public String getDeptno() {
 		return deptno;
 	}
 
-	public void setDeptno(int deptno) {
+	public void setDeptno(String deptno) {
 		this.deptno = deptno;
 	}
 }

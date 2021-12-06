@@ -42,4 +42,26 @@ public class DeptController {
 
 		return "dept/deptDetail";
 	}
+	
+	@RequestMapping("/deptDelete.do")
+	public String deleteDept(int deptno) throws Exception {
+		deptService.deleteDept(deptno);
+		
+		return "forward:/deptList.do";
+	}
+	
+	@RequestMapping("/deptModify.do")
+	public String modifyDept(int deptno, ModelMap model) throws Exception {
+		DeptVO vo = deptService.selectDeptDetail(deptno);
+		model.addAttribute("deptVO", vo);
+		
+		return "dept/deptModify";
+	}
+	
+	@RequestMapping("/deptModifySave.do")
+	public String updateDept(DeptVO vo) throws Exception {
+		deptService.updateDept(vo);
+		
+		return "redirect:/deptDetail.do?deptno=" + vo.getDeptno();
+	}
 }

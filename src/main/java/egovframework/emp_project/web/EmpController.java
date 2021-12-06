@@ -41,4 +41,25 @@ public class EmpController {
 
 		return "emp/empDetail";
 	}
+	
+	@RequestMapping("/empDelete.do")
+	public String deleteEmp(int empno) throws Exception {
+		empService.deleteEmp(empno);
+		return "forward:/empList.do";
+	}
+	
+	@RequestMapping("/empModify.do")
+	public String modifyEmp(int empno, ModelMap model) throws Exception {
+		EmpVO vo = empService.selectEmpDetail(empno);
+		model.addAttribute("empVO", vo);
+		
+		return "emp/empModify";
+	}
+	
+	@RequestMapping("/empModifySave.do")
+	public String updateEmp(EmpVO vo) throws Exception {
+		empService.updateEmp(vo);
+		
+		return "redirect:/empDetail.do?empno=" + vo.getEmpno();
+	}
 }

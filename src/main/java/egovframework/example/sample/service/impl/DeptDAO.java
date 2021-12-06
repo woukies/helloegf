@@ -20,4 +20,12 @@ public class DeptDAO extends EgovAbstractDAO {
 	public DeptVO selectDeptDetail(int deptno) throws Exception {
 		return (DeptVO) select("deptDao.selectDeptDetail", deptno);
 	}
+	
+	public void deleteDept(int deptno) throws Exception {
+		delete("deptDao.deleteDept", deptno);
+	}
+	
+	public void updateDept(DeptVO vo) throws Exception {
+		update("deptDao.updateDept", vo);
+	}
 }

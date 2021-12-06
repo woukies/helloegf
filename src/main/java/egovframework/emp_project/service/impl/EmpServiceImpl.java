@@ -30,4 +30,13 @@ public class EmpServiceImpl implements EmpService {
 		return empDAO.selectEmpDetail(empno);
 	}
 
+	@Override
+	public void deleteEmp(int empno) throws Exception {
+		empDAO.deleteEmp(empno);
+	}
+
+	@Override
+	public void updateEmp(EmpVO vo) throws Exception {
+		empDAO.updateEmp(vo);
+	}
 }

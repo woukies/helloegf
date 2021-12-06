@@ -7,13 +7,11 @@
 	
 	<insert id="deptDao.insertDept">
 		<![CDATA[
-			INSERT INTO dept 
-				( deptno
-				  , dname 
-				  , loc )
-			VALUES ( #deptno#
-				  , #dname#
-				  , #loc# )
+			INSERT INTO
+				dept 
+				( deptno, dname, loc ) 
+			VALUES
+				( #deptno#, #dname#, #loc# )
 		]]>
 	</insert>
 	
@@ -34,5 +32,27 @@
 				deptno = #deptno#
 		]]>	
 	</select>
+	
+	<delete id="deptDao.deleteDept">
+		<![CDATA[
+			DELETE
+			FROM
+				dept
+			WHERE
+				deptno = #deptno#
+		]]>	
+	</delete>
+	
+	<update id="deptDao.updateDept">
+		<![CDATA[
+			UPDATE 
+				dept 
+			SET 
+				dname = #dname#, 
+				loc = #loc# 
+			WHERE 
+				deptno = #deptno#
+		]]>
+	</update>
 
 </sqlMap>

@@ -26,11 +26,30 @@
 	
 	<select id="empDao.selectEmpDetail" resultClass="empVO">
 		SELECT
-			empno, ename, job, mgr, hiredate, sal, nvl(comm, 0) "comm", deptno
+			empno, ename, job, mgr, hiredate, sal, comm, deptno
 		FROM
 			emp
 		WHERE
 			empno = #empno#
 	</select>
 
+	<delete id="empDao.deleteEmp">
+		DELETE
+		FROM
+			emp
+		WHERE
+			empno = #empno#
+	</delete>
+	
+	<update id="empDao.updateEmp">
+		<![CDATA[
+			UPDATE 
+				emp 
+			SET 
+				ename = #ename#, 
+				deptno = #deptno# 
+			WHERE 
+				empno = #empno#
+		]]>
+	</update>
 </sqlMap>  
