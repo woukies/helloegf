@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Item">
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="itemVO" type="egovframework.item_project.service.ItemVO"/>
+		
+	<select id="itemDao.selectItemList" resultClass="egovMap">
+		SELECT
+			name, price, description
+		FROM
+			item
+	</select>
+	
+	<select id="itemDao.selectItemDetail" resultClass="itemVO">
+		SELECT
+			name, price, description
+		FROM
+			item
+		WHERE
+			name = #name#
+	</select>
+	
+	<insert id="itemDao.insertItem">
+		<![CDATA[
+			INSERT INTO 
+				item (
+					name, price, description
+				)
+			VALUES (
+				#name#, #price#, #description#
+				)
+		]]>
+	</insert>
+
+	<delete id="itemDao.deleteItem">
+		DELETE
+		FROM
+			item
+		WHERE
+			name = #name#
+	</delete>
+	
+	<update id="itemDao.updateItem">
+		<![CDATA[
+			UPDATE 
+				item 
+			SET 
+				price = #price#, 
+				description = #description# 
+			WHERE 
+				name = #name#
+		]]>
+	</update>
+</sqlMap>  
