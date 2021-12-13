@@ -44,9 +44,13 @@
         </property>
     </bean>
 
+	<!-- jsp 설정 -->
     <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
 	    p:viewClass="org.springframework.web.servlet.view.JstlView"
 	    p:prefix="/WEB-INF/jsp/egovframework/example/" p:suffix=".jsp"/>
+	<!-- 
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:suffix=".jsp" p:prefix="/" p:viewClass="org.springframework.web.servlet.view.JstlView" p:order="1"/>
+    -->
 
     <!-- For Pagination Tag -->
     <bean id="imageRenderer" class="egovframework.example.cmmn.web.EgovImgPaginationRenderer"/>

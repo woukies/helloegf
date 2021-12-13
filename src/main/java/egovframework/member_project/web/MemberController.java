@@ -19,23 +19,28 @@ public class MemberController {
 		return "member/register";
 	}
 	
-	@RequestMapping(value = "/memberRegisterSave.do")
-	public String insertMemberSave(MemberVO vo) throws Exception {
-		if (memberService.insertMember(vo) == null) {
-			return "redirect:memberLogin.do";
-		}
-		return "redirect:memberRegister.do";
-	}
-	
 	@RequestMapping("/memberLogin.do")
 	public String loginMember() throws Exception {
 		return "member/login";
 	}
 	
+	@RequestMapping("/memberLoginOK.do")
+	public String loginMemberOK() throws Exception {
+		return "member/login_ok";
+	}
+	
+	@RequestMapping(value = "/memberRegisterSave.do")
+	public String insertMemberSave(MemberVO vo) throws Exception {
+		if (memberService.insertMember(vo) > 0) {
+			return "redirect:memberLogin.do";
+		}
+		return "redirect:memberRegister.do";
+	}
+	
 	@RequestMapping("/memberLoginSave.do")
 	public String loginMemberSave(MemberVO vo) throws Exception {
 		if (memberService.loginMember(vo) > 0) {
-			return "member/login_ok";
+			return "redirect:memberLoginOK.do";
 		}
 		return "redirect:memberLogin.do";
 	}	

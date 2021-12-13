@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import egovframework.member_project.service.MemberService;
 import egovframework.member_project.service.MemberVO;
 
-
 @Service("memberService")
 public class MemberServiceImpl implements MemberService {
 
@@ -16,12 +15,23 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int loginMember(MemberVO vo) throws Exception {
-		return memberDAO.loginMember(vo);
+		MemberVO loginMember = memberDAO.loginMember(vo);
+		if (loginMember == null) {
+			return -1;
+		} else if (loginMember.getMem_pwd().equals(vo.getMem_pwd())) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 
 	@Override
-	public String insertMember(MemberVO vo) throws Exception {
-		return memberDAO.insertMember(vo);
+	public int insertMember(MemberVO vo) throws Exception {
+		if (memberDAO.insertMember(vo) == null) {
+			return 1;
+		} else {
+			return -1;
+		}
 	}
 
 }
