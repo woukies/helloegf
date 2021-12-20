@@ -1,0 +1,13 @@
+CREATE TABLE nboard (
+    unq     NUMBER PRIMARY KEY,
+    title   VARCHAR2(100) NOT NULL,
+    pass    VARCHAR2(100) NOT NULL,
+    name    VARCHAR2(20) NOT NULL,
+    content VARCHAR2(4000) NOT NULL,
+    hits    NUMBER,
+    rdate   DATE
+);
+
+CREATE SEQUENCE nboard_seq INCREMENT BY 1 START WITH 1 MAXVALUE 99999;
+
+SELECT * FROM nboard;

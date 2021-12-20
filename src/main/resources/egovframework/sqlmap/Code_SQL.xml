@@ -14,4 +14,48 @@
 				( codes_seq.NEXTVAL, #gid#, #name# )
 		]]>
 	</insert>
+	
+	<select id="codeDao.selectCodeList" resultClass="egovMap">
+		SELECT
+			code, DECODE(gid, '1', 'job', '2', 'hobby') AS gid, name
+		FROM
+			codes
+	</select>
+	
+	<select id="codeDao.selectCodeCount" resultClass="int">
+		SELECT
+			COUNT(*)
+		FROM
+			codes
+	</select>
+	
+	<delete id="codeDao.deleteCode">
+		<![CDATA[
+			DELETE FROM
+				codes 
+			WHERE
+				code = #code#
+		]]>
+	</delete>
+	
+	<select id="codeDao.selectCode" resultClass="codeVO">
+		SELECT
+			code, gid, name
+		FROM
+			codes
+		WHERE
+			code = #code#
+	</select>
+	
+	<update id="codeDao.updateCode">
+		<![CDATA[
+			UPDATE
+				codes
+			SET
+				gid = #gid#, name = #name#
+			WHERE
+				code = #code#
+		]]>
+	</update>
+	
 </sqlMap>  
