@@ -16,4 +16,13 @@
 				( nboard_seq.NEXTVAL, #title#, #pass#, #name#, #content#, 0, sysdate )
 		]]>
 	</insert>	
+	
+	<!-- to_char() 로 날짜 형식 -->
+	<select id="boardDAO.selectNBoards" resultClass="egovMap">
+		SELECT
+			unq, title, name, hits, rdate
+		FROM
+			nboard
+	</select>
+	
 </sqlMap>  
